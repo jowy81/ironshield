@@ -5,3 +5,4 @@ node_modules/
 .DS_Store
 hackathon/.env
 demo/frames/
+demo-output.txt
