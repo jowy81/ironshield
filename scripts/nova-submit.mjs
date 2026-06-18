@@ -34,7 +34,8 @@ const GROUP_ID = 'ironclaw-hackathon-260618';
 const AGENT_ID = process.env.HACKATHON_AGENT_ID || 'jowy81-ironshield';
 const PARTICIPANT = process.env.HACKATHON_PARTICIPANT || 'Joel D. (@jowy81)';
 const DEMO_URL =
-  process.env.DEMO_URL || 'https://jowy81.github.io/ironshield/demo/ironshield-demo.mp4';
+  process.env.DEMO_URL ||
+  'https://github.com/jowy81/ironshield/releases/download/v1.0.0/ironshield-demo.mp4';
 
 async function getSessionToken(accountId, apiKey) {
   const res = await fetch(NOVA_AUTH_URL, {

@@ -6,7 +6,7 @@
 **workflow_description:** Zero-trust IronClaw skill intercepts every tool call, scores exfiltration and injection risk, blocks critical actions, requires human approval for elevated ops, and writes redacted JSONL audit trails.
 
 ## Demo
-**demo_url:** https://jowy81.github.io/ironshield/demo/ironshield-demo.mp4
+**demo_url:** https://github.com/jowy81/ironshield/releases/download/v1.0.0/ironshield-demo.mp4
 
 ## Links
 **github_repo:** https://github.com/jowy81/ironshield

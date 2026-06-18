@@ -7,7 +7,7 @@
 - [x] Demo video: `demo/ironshield-demo.mp4` (~2 min)
 - [x] GitHub repo: https://github.com/jowy81/ironshield
 - [x] GitHub Pages: https://jowy81.github.io/ironshield/
-- [x] Demo URL (submission): https://jowy81.github.io/ironshield/demo/ironshield-demo.mp4
+- [x] Demo URL (submission): https://github.com/jowy81/ironshield/releases/download/v1.0.0/ironshield-demo.mp4
 - [x] Release v1.0.0 with MP4 attached
 
 ## You must do (requires your NOVA account)

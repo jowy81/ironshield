@@ -32,7 +32,7 @@ An IronClaw **skill** that wraps all tool calls with a policy engine:
 node reference/risk-engine.mjs --demo
 ```
 
-**Demo video:** https://jowy81.github.io/ironshield/demo/ironshield-demo.mp4  
+**Demo video:** https://github.com/jowy81/ironshield/releases/download/v1.0.0/ironshield-demo.mp4  
 **Interactive page:** https://jowy81.github.io/ironshield/
 
 Example output:
