@@ -2,12 +2,30 @@
 /**
  * Standalone NOVA hackathon submission (mirrors nova-submit WASM tool).
  * Usage:
- *   NOVA_ACCOUNT_ID=you.nova-sdk.near NOVA_API_KEY=xxx node scripts/nova-submit.mjs
+ *   cp hackathon/.env.example hackathon/.env   # fill credentials
+ *   node scripts/nova-submit.mjs
  */
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+function loadEnvFile(path) {
+  if (!existsSync(path)) return;
+  for (const line of readFileSync(path, 'utf8').split('\n')) {
+    const t = line.trim();
+    if (!t || t.startsWith('#')) continue;
+    const i = t.indexOf('=');
+    if (i === -1) continue;
+    const key = t.slice(0, i).trim();
+    const val = t.slice(i + 1).trim();
+    if (!process.env[key]) process.env[key] = val;
+  }
+}
+
+const __dir = dirname(fileURLToPath(import.meta.url));
+const root = join(__dir, '..');
+loadEnvFile(join(root, 'hackathon', '.env'));
 
 const NOVA_AUTH_URL = 'https://nova-sdk.com/api/auth/session-token';
 const NOVA_MCP_BASE =
@@ -17,9 +35,6 @@ const AGENT_ID = process.env.HACKATHON_AGENT_ID || 'jowy81-ironshield';
 const PARTICIPANT = process.env.HACKATHON_PARTICIPANT || 'Joel D. (@jowy81)';
 const DEMO_URL =
   process.env.DEMO_URL || 'https://jowy81.github.io/ironshield/demo/ironshield-demo.mp4';
-
-const __dir = dirname(fileURLToPath(import.meta.url));
-const root = join(__dir, '..');
 
 async function getSessionToken(accountId, apiKey) {
   const res = await fetch(NOVA_AUTH_URL, {

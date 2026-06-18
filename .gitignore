@@ -3,5 +3,5 @@ node_modules/
 .env.*
 *.log
 .DS_Store
+hackathon/.env
 demo/frames/
-demo-output.txt
